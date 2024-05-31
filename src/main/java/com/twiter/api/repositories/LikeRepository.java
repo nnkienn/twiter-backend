@@ -10,7 +10,7 @@ import com.twiter.api.model.Like;
 
 public interface LikeRepository extends JpaRepository<Like, Long> {
 
-	@Query("SELECT I FROM Like I WHERE I.user.id=:userId AN I.twit.id=:twitId ")
+	@Query("SELECT I FROM Like I WHERE I.user.id=:userId AND I.twit.id=:twitId ")
 	public Like isLikeExist(@Param("userId") Long userId , @Param("twitId") Long twited);
 	
 	@Query("SELECT I FROM Like I WHERE I.twit.id=:twitId ")

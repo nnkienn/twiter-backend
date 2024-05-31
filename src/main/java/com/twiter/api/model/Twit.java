@@ -1,5 +1,6 @@
 package com.twiter.api.model;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,7 +26,7 @@ public class Twit {
 		
 		private String content;
 		private String image;
-		
+		private LocalDateTime createdAt;
 		private String video;
 		
 		@OneToMany(mappedBy = "twit" ,cascade = CascadeType.ALL)
