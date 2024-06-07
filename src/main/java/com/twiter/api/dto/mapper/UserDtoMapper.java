@@ -16,15 +16,15 @@ public class UserDtoMapper {
 		userDto.setBackgroundImage(user.getBackgroundImage());
 		userDto.setBio(user.getBio());
 		userDto.setBirthDate(user.getBirthDate());
-		userDto.setFollowes(toUserDto(user.getFlowers()));
-		userDto.setFollowing(toUserDto(user.getFollowings()));
+		userDto.setFollowes(toUserDtos(user.getFlowers()));
+		userDto.setFollowing(toUserDtos(user.getFollowings()));
 		userDto.setLogin_with_google(user.isLogin_with_google());
 		userDto.setLocation(user.getLocation());
 		
 		return userDto;
 	}
 
-	private static List<UserDto> toUserDto(List<User> followers) {
+	public static List<UserDto> toUserDtos(List<User> followers) {
 		List<UserDto> userDtos = new ArrayList<>();
 		
 		for(User user : followers) {
